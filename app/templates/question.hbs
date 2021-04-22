@@ -1,0 +1,16 @@
+<div class="row h-screen">
+  <main class="col-md-10">
+    <div class="question-wrapper">
+      <h1>Question</h1>
+      <h2>{{this.model.title}}</h2>
+      <p style="white-space: pre-wrap">{{this.model.content}}</p>
+    </div>
+
+    <div class="answer-box">
+      <h1>Answers</h1>
+      {{#each this.model.answers as |answer|}}
+        <p>{{answer.content}}</p>
+      {{/each}}
+    </div>
+  </main>
+</div>
