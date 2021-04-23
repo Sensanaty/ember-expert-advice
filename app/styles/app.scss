@@ -1,11 +1,22 @@
 @import "ember-bootstrap/bootstrap";
 @import "main";
 @import "ask";
+@import "question-box";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap');
 
 body, .h-screen {
   height: 100vh;
+  font-family: "Roboto", sans-serif;
 }
 
 .form-group.has-error input {
   border-color: #dc3545;
+}
+
+#dashboard-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  margin: 0 auto;
 }

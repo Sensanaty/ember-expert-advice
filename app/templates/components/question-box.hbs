@@ -1,0 +1,11 @@
+<div class="question-box">
+  {{#link-to "question" question.id}}
+    <h1 class="question-title">{{question.title}}</h1>
+  {{/link-to}}
+  <h3 class="question-description">{{truncateDescription question.content}}</h3>
+  <div class="tag-wrapper">
+    {{#each question.tags as |tag|}}
+      <span class="tag">{{tag.name}}</span>
+    {{/each}}
+  </div>
+</div>

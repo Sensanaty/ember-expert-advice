@@ -1,20 +1,10 @@
-<div class="row h-screen">
-  <main class="col-md-10">
-    {{#link-to "ask"}}Ask a Question{{/link-to}}
+<div>
+  <main id="dashboard-wrapper">
+    {{#link-to "ask"}}<button class="btn btn-primary" type="button">Ask a Question</button>{{/link-to}}
 
-    <ul>
-      {{#each this.model as |question|}}
-        <li>
-          {{#link-to "question" question.id}}
-            {{question.title}}
-          {{/link-to}}
-          <ul class="tag-wrapper">
-            {{#each question.tags as |tag|}}
-              <span class="tag">{{tag.name}}</span>
-            {{/each}}
-          </ul>
-        </li>
-      {{/each}}
-    </ul>
+    {{#each this.model as |question|}}
+      {{question-box question=question}}
+    {{/each}}
+
   </main>
 </div>
