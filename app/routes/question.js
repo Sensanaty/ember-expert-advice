@@ -12,6 +12,17 @@ export default Route.extend({
         question_id: parseInt(questionId)
       });
       newAnswer.save();
+    },
+    deleteQuestion(questionId) {
+      if (confirm("Are you sure you want to delete your question?")) {
+        const question = this.store.peekRecord("question", questionId);
+        question.deleteRecord();
+        if (question.isDeleted) {
+          question.save();
+          this.transitionTo("dashboard");
+          this.refresh();
+        }
+      }
     }
   },
   model(params) {
