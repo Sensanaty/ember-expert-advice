@@ -34,9 +34,9 @@
             {{#link-to "edit_answer" answer.id}}
               <span class="edit-answer-link">Edit</span>
             {{/link-to}}
-            {{#link-to "dashboard"}}
+            <button class="btn-danger" type="button" {{action "deleteAnswer" answer.id}}>
               <span class="delete-answer-link">Delete</span>
-            {{/link-to}}
+            </button>
           {{/if}}
         </div>
       {{/each}}

@@ -23,6 +23,16 @@ export default Route.extend({
           this.refresh();
         }
       }
+    },
+    deleteAnswer(answerId) {
+      if (confirm("Are you sure you want to delete your answer?")) {
+        const answer = this.store.peekRecord("answer", answerId);
+        answer.deleteRecord();
+        if (answer.isDeleted) {
+          answer.save();
+          this.refresh();
+        }
+      }
     }
   },
   model(params) {
