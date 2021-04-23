@@ -1,0 +1,96 @@
+#question-page-wrapper {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  .question-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    margin: 0 auto;
+    width: fit-content;
+    border: 1px solid grey;
+    padding: 10px 35px;
+    border-radius: 15px;
+
+    h1 {
+      font-size: 1.5rem;
+      margin: 10px 0 15px 0;
+      font-weight: bold;
+
+      &:after {
+        content: "";
+        background: black;
+        display: block;
+        height: 2px;
+        width: 100%;
+      }
+    }
+
+    .question-description{
+      font-size: 1.2rem;
+      letter-spacing: 0.7px;
+      line-height: 1.8rem;
+    }
+
+    .poster-email {
+      margin: 0 auto 0 0;
+      font-weight: bold;
+    }
+
+    .owner-zone {
+      margin: 0 0 0 auto;
+    }
+  }
+
+  .answer-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 1.8rem;
+      margin: 20px 0;
+    }
+
+    .answer-wrapper {
+      background: #2f2f2f;
+      color: white;
+      padding: 20px 15px;
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    a > .edit-answer-link {
+      margin-left: 30px;
+      margin-right: 10px;
+    }
+  }
+
+  .answer-question-form {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    label {
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    textarea {
+      min-height: 200px;
+      min-width: 800px;
+      resize: none;
+      padding: 10px;
+    }
+
+    button {
+      margin: 10px 0 20px 0;
+    }
+  }
+}

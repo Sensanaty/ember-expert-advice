@@ -1,15 +1,43 @@
-<div class="row h-screen">
-  <main class="col-md-10">
+<div>
+  <main id="question-page-wrapper">
     <div class="question-wrapper">
-      <h1>Question</h1>
-      <h2>{{this.model.title}}</h2>
-      <p style="white-space: pre-wrap">{{this.model.content}}</p>
+      <h1>{{this.model.question.title}}</h1>
+      <p class="question-description" style="white-space: pre-wrap">{{this.model.question.content}}</p>
+      <span class="poster-email">Posted by {{this.model.question.user_email}}</span>
+      {{#if (eq this.model.userId this.model.question.user_id)}}
+        <div class="owner-zone">
+          <!-- TODO: Link to the proper edit and destroy actions -->
+          <button class="btn btn-primary">Edit</button>
+          <button class="btn btn-danger">Delete</button>
+        </div>
+      {{/if}}
     </div>
 
     <div class="answer-box">
       <h1>Answers</h1>
-      {{#each this.model.answers as |answer|}}
-        <p>{{answer.content}}</p>
+
+      {{#if this.model.currentUser}}
+        <div class="answer-question-form">
+          <label for="answer">Answer the question</label>
+          {{textarea id="answer" name="answer" value=content}}
+          <button class="btn btn-primary" type="button" {{action "answerQuestion" content}}>Answer</button>
+        </div>
+      {{/if}}
+
+      <!-- TODO: Link to the proper destroy and edit actions -->
+      {{#each this.model.question.answers as |answer|}}
+        <div class="answer-wrapper">
+          <p class="question-answer">{{answer.content}}</p>
+          <span>By {{answer.user_email}}</span>
+          {{#if (eq answer.user_id this.model.userId)}}
+            {{#link-to "dashboard"}}
+              <span class="edit-answer-link">Edit</span>
+            {{/link-to}}
+            {{#link-to "dashboard"}}
+              <span class="delete-answer-link">Delete</span>
+            {{/link-to}}
+          {{/if}}
+        </div>
       {{/each}}
     </div>
   </main>
