@@ -21,7 +21,7 @@
         <div class="answer-question-form">
           <label for="answer">Answer the question</label>
           {{textarea id="answer" name="answer" value=content}}
-          <button class="btn btn-primary" type="button" {{action "answerQuestion" content}}>Answer</button>
+          <button class="btn btn-primary" type="button" {{action "answerQuestion" content this.model.question.id}}>Answer</button>
         </div>
       {{/if}}
 
