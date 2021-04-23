@@ -31,7 +31,7 @@
           <p class="question-answer">{{answer.content}}</p>
           <span>By {{answer.user_email}}</span>
           {{#if (eq answer.user_id this.model.userId)}}
-            {{#link-to "dashboard"}}
+            {{#link-to "edit_answer" answer.id}}
               <span class="edit-answer-link">Edit</span>
             {{/link-to}}
             {{#link-to "dashboard"}}

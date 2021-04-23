@@ -1,0 +1,25 @@
+#edit-answer-wrapper, .answer-question-form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+#edit-answer-wrapper {
+  h1 { font-size: 1.3rem }
+}
+
+.answer-question-form {
+  label {
+    font-weight: bold;
+  }
+
+  textarea {
+    min-height: 200px;
+    min-width: 50%;
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+}
