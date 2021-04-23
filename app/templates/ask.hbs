@@ -1,0 +1,24 @@
+<main id="ask-wrapper">
+  <h1>Ask a question</h1>
+  <form id="send-question-form">
+    <div class="form-input-wrapper" id="title-wrapper">
+      <label for="title">Title</label>
+      {{#if this.model.errors.title}}
+        <span class="error-div">{{this.model.errors.title}}</span>
+      {{/if}}
+      {{input class="form-control" type="text" name="title" value=title focus-out=(action 'validateTitle' title)}}
+    </div>
+    <div class="form-input-wrapper" id="description-wrapper">
+      <label for="content">Description</label>
+      {{textarea class="form-control" name="content" value=content}}
+    </div>
+    <div class="form-input-wrapper" id="tags-wrapper">
+      <label for="tags">Tags</label>
+      {{#if this.model.errors.tags}}
+        <span class="error-div">{{this.model.errors.tags}}</span>
+      {{/if}}
+      {{input class="form-control" name="tags" value=tags focus-out=(action 'validateTags' tags)}}
+    </div>
+    <button class="btn btn-primary" {{action "askQuestion" title content tags}}>Post a Question</button>
+  </form>
+</main>
