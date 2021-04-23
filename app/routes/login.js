@@ -11,6 +11,6 @@ export default Route.extend({
         .catch(() => {
           this.controller.set("errorMessage", "Invalid login.");
         });
-    }
-  }
+    },
+  },
 });

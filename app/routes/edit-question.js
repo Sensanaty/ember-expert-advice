@@ -1,5 +1,5 @@
-import Route from '@ember/routing/route';
-import RSVP from 'rsvp';
+import Route from "@ember/routing/route";
+import RSVP from "rsvp";
 import { inject as service } from "@ember/service";
 import AuthenticatedRouteMixin from "ember-simple-auth/mixins/authenticated-route-mixin";
 
@@ -14,23 +14,28 @@ export default Route.extend(AuthenticatedRouteMixin, {
         question.set("tags", tags);
         question.save();
       });
-    }
+    },
   },
   async beforeModel(transition) {
-    const questionOwner = this.store.peekRecord("question", parseInt(this.paramsFor("edit-question").question_id));
-    if (!questionOwner) { this.transitionTo("dashboard") }
+    const questionOwner = this.store.peekRecord(
+      "question",
+      parseInt(this.paramsFor("edit-question").question_id)
+    );
+    if (!questionOwner) {
+      this.transitionTo("dashboard");
+    }
     if (parseInt(this.currentSession.user.id) !== questionOwner.user_id) {
       alert("You can't edit this question, it doesn't belong to you");
       transition.abort();
     }
   },
   model(params) {
-    return RSVP.hash ({
+    return RSVP.hash({
       question: this.store.peekRecord("question", params.question_id),
       errors: {
         title: "",
-        tags: ""
+        tags: "",
       },
     });
-  }
+  },
 });

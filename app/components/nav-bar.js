@@ -7,6 +7,6 @@ export default Component.extend({
   actions: {
     async logout() {
       await this.session.invalidate();
-    }
-  }
+    },
+  },
 });

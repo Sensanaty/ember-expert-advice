@@ -1,4 +1,4 @@
-import DS from 'ember-data';
+import DS from "ember-data";
 
 export default DS.Model.extend({
   title: DS.attr(),
@@ -6,5 +6,5 @@ export default DS.Model.extend({
   user_id: DS.attr(),
   user_email: DS.attr(),
   tags: DS.attr(),
-  answers: DS.hasMany("answer")
+  answers: DS.hasMany("answer"),
 });

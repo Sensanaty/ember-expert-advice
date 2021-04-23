@@ -8,5 +8,5 @@ export default OAuth2Bearer.extend({
     if (this.get("session.data.accountId")) {
       header("X-AccountId", this.get("session.data.accountId"));
     }
-  }
+  },
 });

@@ -14,5 +14,5 @@ export function initialize(application) {
 
 export default {
   name: "inject-notifications",
-  initialize
+  initialize,
 };

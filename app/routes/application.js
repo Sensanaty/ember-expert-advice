@@ -21,6 +21,6 @@ export default Route.extend(ApplicationRouteMixin, {
     logout() {
       this.get("session").invalidate();
       this.get("currentSession").nullify();
-    }
-  }
+    },
+  },
 });

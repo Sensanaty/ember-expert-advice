@@ -16,6 +16,6 @@ export default Route.extend({
         user.password
       );
       this.transitionTo("dashboard");
-    }
-  }
+    },
+  },
 });

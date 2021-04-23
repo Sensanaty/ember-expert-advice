@@ -35,11 +35,11 @@ export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
     const meta = {
       total: total,
       perPage: perPage,
-      pages: pages
+      pages: pages,
     };
 
     payload.meta = meta;
 
     return this._super(status, headers, payload, requestData);
-  }
+  },
 });

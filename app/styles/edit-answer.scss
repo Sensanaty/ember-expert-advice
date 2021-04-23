@@ -1,4 +1,5 @@
-#edit-answer-wrapper, .answer-question-form {
+#edit-answer-wrapper,
+.answer-question-form {
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -8,7 +9,9 @@
 }
 
 #edit-answer-wrapper {
-  h1 { font-size: 1.3rem }
+  h1 {
+    font-size: 1.3rem;
+  }
 }
 
 .answer-question-form {

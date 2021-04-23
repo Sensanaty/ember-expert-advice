@@ -6,9 +6,10 @@
 @import "edit-question";
 @import "edit-answer";
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap");
 
-body, .h-screen {
+body,
+.h-screen {
   height: 100vh;
   font-family: "Roboto", sans-serif;
 }

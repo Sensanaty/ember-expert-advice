@@ -1,4 +1,4 @@
-import Route from '@ember/routing/route';
+import Route from "@ember/routing/route";
 import AuthenticatedRouteMixin from "ember-simple-auth/mixins/authenticated-route-mixin";
 import { inject as service } from "@ember/service";
 
@@ -9,9 +9,9 @@ export default Route.extend(AuthenticatedRouteMixin, {
     return {
       errors: {
         title: "",
-        tags: ""
-      }
-    }
+        tags: "",
+      },
+    };
   },
   actions: {
     async askQuestion(title, content, tags) {
@@ -23,10 +23,10 @@ export default Route.extend(AuthenticatedRouteMixin, {
         title: title,
         content: content,
         tags: tags.split(/[\s,]+/),
-        user_id: this.currentSession.user.id
-      })
+        user_id: this.currentSession.user.id,
+      });
       await question.save();
       this.transitionTo("dashboard");
-    }
-  }
+    },
+  },
 });
