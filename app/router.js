@@ -11,6 +11,8 @@ Router.map(function() {
   this.route("signup");
   this.route("dashboard", { path: "" }, function() {});
   this.route("question", { path: "question/:question_id" });
+  this.route("edit_question", { path: "edit_question/:question_id" });
+  this.route("edit_answer", { path: "edit_answer/:answer_id" });
   this.route('ask');
 });
 

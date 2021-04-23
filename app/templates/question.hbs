@@ -6,8 +6,9 @@
       <span class="poster-email">Posted by {{this.model.question.user_email}}</span>
       {{#if (eq this.model.userId this.model.question.user_id)}}
         <div class="owner-zone">
-          <!-- TODO: Link to the proper edit and destroy actions -->
-          <button class="btn btn-primary">Edit</button>
+          {{#link-to "edit_question" this.model.question.id}}
+            <button class="btn btn-primary">Edit</button>
+          {{/link-to}}
           <button class="btn btn-danger">Delete</button>
         </div>
       {{/if}}

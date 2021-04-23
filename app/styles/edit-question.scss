@@ -1,4 +1,4 @@
-#ask-wrapper {
+#edit-question-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,7 +7,7 @@
   margin: 0 auto;
 }
 
-#send-question-form {
+#edit-question-form {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -27,10 +27,4 @@
   button {
     margin-top: 20px;
   }
-}
-
-span.error-div {
-  display: inline-block;
-  color: red;
-  margin-left: 10px;
 }

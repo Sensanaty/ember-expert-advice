@@ -1,0 +1,27 @@
+<div>
+  <main id="edit-question-wrapper">
+    <h1>Editing Question:</h1>
+
+    <div class="question-wrapper" style="margin-bottom: 50px">
+      <h1>{{this.model.question.title}}</h1>
+      <p class="question-description" style="white-space: pre-wrap">{{this.model.question.content}}</p>
+    </div>
+
+    <form id="edit-question-form">
+      <div class="form-input-wrapper" id="title-wrapper">
+        <p>You can leave a field empty if you want the old value to stay</p>
+        <label for="title">Title</label>
+        {{input class="form-control" type="text" name="title" value=title}}
+      </div>
+      <div class="form-input-wrapper" id="description-wrapper">
+        <label for="content">Description</label>
+        {{textarea class="form-control" name="content" value=content}}
+      </div>
+      <div class="form-input-wrapper" id="tags-wrapper">
+        <label for="tags">Tags</label>
+        {{input class="form-control" name="tags" value=tags}}
+      </div>
+      <button class="btn btn-primary" {{action "editQuestion" title content tags}}>Edit Question</button>
+    </form>
+  </main>
+</div>
