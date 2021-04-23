@@ -49,7 +49,8 @@ module.exports = function (environment) {
   }
 
   if (environment === "production") {
-    // here you can enable a production-specific feature
+    ENV.serverURL = "https://expert-advice-sensanaty.herokuapp.com"
+    ENV.webURL = "https://ember-expert-advice-sensanaty.netlify.app"
   }
 
   ENV.apiBaseURL = ENV.serverURL + "/" + ENV.apiNamespace;
